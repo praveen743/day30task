@@ -1,8 +1,9 @@
 import { useFormik } from 'formik'
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 function AddAttendence() {
+    let navigate = useNavigate()
     let params = useParams()
     console.log(params)
     const formik = useFormik({
@@ -21,7 +22,7 @@ function AddAttendence() {
                      }
                  })
                  alert("attendence added")
-                 console.log(values)
+                 navigate("/student-list")
                 }
                  
 
